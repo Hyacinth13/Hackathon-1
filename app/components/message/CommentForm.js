@@ -11,7 +11,7 @@ class CommentForm extends React.Component{
      url: '/messagecomments',
      type: 'POST',
      dataType: 'JSON',
-     data: { title: title.value, description: description.value }
+     data: { title: title.value, description: description.value date: date.value  }
    }).done( comment => {
      title.value = '';
      description.value = '';

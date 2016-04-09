@@ -11,12 +11,10 @@ router.get('/:id', function(req, res, next){
 });
 
 //Get the baords all together
-router.get('/', function(req, res, next){
-	Board.find( function(err, boards, count){
-		res.json(boards);
-	MessageBoard.find( function(err, messageboards, count){
-		res.json(messageboard);
-	})
+router.get('/', function(req, res, next) {
+ Board.find( function( err, boards, count ) {
+   res.json(boards);
+ });
 });
 
 //Create a new messageboard

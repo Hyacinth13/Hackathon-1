@@ -16,7 +16,7 @@ class MessageForm extends React.Component{
    }).done( message => {
      title.value = '';
      description.value = '';
-     date.value = '';
+     date.value = date.now();
      this.props.addMessage(message);
    }).fail( msg => {
      console.log(msg);

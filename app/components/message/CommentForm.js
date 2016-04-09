@@ -16,7 +16,7 @@ class CommentForm extends React.Component{
    }).done( comment => {
      title.value = '';
      description.value = '';
-     date.value = '';
+     date.value = date.now;
      this.props.addComment(comment);
    }).fail( msg => {
      console.log(msg);

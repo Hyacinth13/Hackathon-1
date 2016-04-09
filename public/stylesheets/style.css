@@ -1,0 +1,32 @@
+@import '../../bower_components/Materialize/dist/css/materialize.css';
+.header {
+  font-size: 50px;
+  font-family: 'Montserrat', sans-serif;
+  color: #CCCB3B;
+}
+.nav-wrapper {
+  font-size: 50px;
+  font-family: 'Montserrat', sans-serif;
+  color: #CCCB3B;
+}
+.message-title {
+  font-size: 25px;
+  font-family: 'Montserrat', sans-serif;
+  color: #414042;
+}
+.comment-title {
+  font-size: 25px;
+  font-family: 'Montserrat', sans-serif;
+  color: #63C1FF;
+}
+.message-body {
+  font-size: 25px;
+  font-family: 'Domine', serif;
+  color: #414042;
+}
+.comment-body {
+  font-size: 25px;
+  font-family: 'Domine', serif;
+  color: #414042;
+}
+

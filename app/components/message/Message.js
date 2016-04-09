@@ -33,7 +33,6 @@ class Message extends Component {
 			url: `/messages/${this.props._id}`,
 			type: "DELETE", 
 			dataType: "JSON", 
-			data: {titel: this. refs.title.value, description: this.refs.description.value, }
 		}).done(message => {
 			this.props.refresh();
 		}).fail(msg => {

@@ -33,7 +33,7 @@ class Messages extends Component {
 
 	render(){
 		let messages = this.state.messages.map( message => {
-			return(<Message key={message._id} {...message} />);
+			return(<Message key={message._id} {...message} refresh={this.getMessages}/>);
 		})
 	   return(
 	   	  <div>

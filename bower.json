@@ -1,13 +1,10 @@
 {
-  "name": "Community Comms",
+  "name": "bower install moment --save",
   "description": "",
   "main": "",
-  "authors": [
-    " "
-  ],
   "license": "MIT",
   "moduleType": [],
-  "homepage": "",
+  "homepage": "https://github.com/Hyacinth13/Hackathon-1",
   "ignore": [
     "**/.*",
     "node_modules",

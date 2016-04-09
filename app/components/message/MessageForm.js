@@ -31,7 +31,7 @@ class MessageForm extends React.Component{
        <form onSubmit={this.addMessage}>
          <input ref='title' placeholder='title' />
          <input ref='description' placeholder='message' />
-         <button type='submit'>Add Message</button>
+         <button type='submit' className= 'btn-large card grey darken-3 red-text red-darken-3'>Add Message</button>
        </form>
      </div>
     );

@@ -48,8 +48,8 @@ class Message extends Component {
 					  <textarea ref = 'description' defaultValue={this.props.description}></textarea>
 					</div>
 					<div className='card-action'>
-					  <button className='btn' onClick = {this.toggleEdit}>Cancel </button>
-					  <button className= 'btn' onClick = {this.updateMessage}> Save </button>
+					  <button className='btn-large card grey darken-3 red-text red-darken-3' onClick = {this.toggleEdit}>Cancel </button>
+					  <button className= 'btn-large card grey darken-3 red-text red-darken-3' onClick = {this.updateMessage}> Save </button>
 				   </div>
 				</div>
 			  </div>
@@ -64,7 +64,7 @@ class Message extends Component {
 					  <p>{moment(this.props.updated_at).format("MM/DD/YYYY")}</p>
 					</div>
 					<div className='card-action'>
-					  <button className='btn' onClick = {this.deleteMessage}>Delete </button>
+					  <button className='btn-large card grey darken-3 red-text red-darken-3' onClick = {this.deleteMessage}>Delete </button>
 					</div>
 				</div>
 			</div>

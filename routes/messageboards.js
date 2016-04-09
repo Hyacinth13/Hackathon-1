@@ -18,34 +18,34 @@ router.get('/', function(req, res, next){
 });
 
 //Create a new messageboard
-route.post('/', function(req, res){
-	new MessageBoard({
-		name: req.body.name
-	}).save(function(err, messageboard){
-		res.json(messageboard);
-	})
-});
+// route.post('/', function(req, res){
+// 	new MessageBoard({
+// 		name: req.body.name
+// 	}).save(function(err, messageboard){
+// 		res.json(messageboard);
+// 	})
+// });
 
 //update a messageboard using the id
-router.put(':id', function(req, res){
-	MessageBoard.findByIdAndUpdate(
-		req.params.id,
-		{$set: {name: req.body.name, description: req.body.description}},
-		function(err, messageboard){
-			res.send(board);
-		})
-});
+// router.put(':id', function(req, res){
+// 	MessageBoard.findByIdAndUpdate(
+// 		req.params.id,
+// 		{$set: {name: req.body.name, description: req.body.description}},
+// 		function(err, messageboard){
+// 			res.send(board);
+// 		})
+// });
 
 //delete a messageboard using the id
-router.delete(':/id', function(req, res){
-	MessageBoard.findById(req.params.id, function(err, messageboard){
-		messageboard.remove();
-		MessageList.find({ boardId: req.params.id}, function(err, messagelists){
-			messagelists.forEach(function(err, index){
-				var messagelist = messagelists[index];
-				MessageCard.find({listId: list_id}).remove().exec();
-				messagelist.remove();
-			});
+// router.delete(':/id', function(req, res){
+// 	MessageBoard.findById(req.params.id, function(err, messageboard){
+// 		messageboard.remove();
+// 		MessageList.find({ boardId: req.params.id}, function(err, messagelists){
+// 			messagelists.forEach(function(err, index){
+// 				var messagelist = messagelists[index];
+// 				MessageCard.find({listId: list_id}).remove().exec();
+// 				messagelist.remove();
+// 			});
 			res.status(200).send({success: true});
 		});
 	});

@@ -14,12 +14,13 @@ class Messages extends Component {
 
 	getMessages() {
 		$.ajax ({
-			url: '/messages',
+			url: '/messages/community',
 			type: "GET",
-			DataType: "JSON",
-		}).done(messages => {this.setState({messages: messages});
-		}).fail(msg =>{console.log(msg)
-	});
+			DataType: "JSON"
+		}).done  (messages => {
+			this.setState({messages: messages})
+		}).fail(msg =>{console.log(msg)});
+	}
 
 	componentDidMount(){
 	 	this.getMessages();
@@ -29,19 +30,15 @@ class Messages extends Component {
 	 	this.setState({messages: [...this.state.message, message] });
 	}
 
-	}
 	render(){
-	 	let messages = this.state.messages( message => {
-	 		return(<Message refresh={this.getMessages} key = {`message -${message._id}`} {...message}/>);
-	 	});
-	 		return(
-	 			<div>
-	 				<MessageForm addMessage={this.addMessage}/>
-	 				<div className = 'row'>
-	 					{messages}
-	 				</div>
-	 			</div>
-	 		);
+		let messages = this.state.messages.map( message => {
+			return(<Message key={message._id} {...message} />);
+		})
+	   return(
+	   	  <div>
+	   	    <MessageForm />
+	   	  </div>)
+	   	;
 	 }
 }
 

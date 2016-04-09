@@ -4,8 +4,11 @@ var mongoose = require('mongoose');
 var Message = mongoose.model('Message');
 var Comment = mongoose.model('Comment');
 
+router.get('/', function(req, res) {
+	res.render('messages');
+})
 //get the messagelist
-router.get('/', function(req, res, next){
+router.get('/community', function(req, res, next){
 	var query = Message.find({});
 	query.where('boardId', req.query.boardId);
 	query.exec(function(err, messages, count){

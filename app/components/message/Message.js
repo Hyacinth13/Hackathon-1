@@ -25,7 +25,8 @@ class Message extends Component {
 			this.props.refresh();
 		}).fail(msg=> {
 			console.log(msg);
-	});
+	    });
+	}
 
 	deleteMessage() {
 		$.ajax({
@@ -42,32 +43,34 @@ class Message extends Component {
 
 	edit(){
 		return(<div className="col s12 m3">
-						 <div className='card purple darken-1'>
-							 <div className='card-content white-text'>
-								 <input required = {true} type = 'text' ref = 'title' placeholder = "Title" defaultValue = {this.props.title} />
-								 <textarea ref = 'description'> this.props.description </textarea>
-							 </div>
-						 </div>
-						</div>
-						<div className='card action'>
-							<button className='btn' onClick = {this.toggleEdit}>Cancel </button>
-							<button className= 'btn' onClick = {this.updateMessage}> Save </button>
-						</div>);
+			     <div className='card purple darken-1'>
+				   <div className='card-content white-text'>
+					  <input required = {true} type = 'text' ref = 'title' placeholder = "Title" defaultValue = {this.props.title} />
+					  <textarea ref = 'description'> this.props.description </textarea>
+					</div>
+					<div className='card-action'>
+					  <button className='btn' onClick = {this.toggleEdit}>Cancel </button>
+					  <button className= 'btn' onClick = {this.updateMessage}> Save </button>
+				   </div>
+				</div>
+			  </div>
+			);
 	}
 	message(){
 		return(<div className="col s12 m3">
-						 <div className='card purple darken-1'>
-							 <div className='card-content white-text'>
-								 <span className='card-title' onClick={this.toggleEdit}> {this.props.title} </span>
-								 <p> {this.props.description || "Click message title to add a description"} </p>
-								 <p>{moment(this.props.updated_at).format("MM/DD/YYYY")}</p>
-							 </div>
-							 <div className='card action'>
-								<button className='btn' onClick = {this.deleteMessage}>Delete </button>
-								<a href= { `/messages/${this.props._id}`} className='btn'> Show </a>
-							 </div>
-							</div>
-					  </div>);
+			     <div className='card purple darken-1'>
+				    <div className='card-content white-text'>
+					  <span className='card-title' onClick={this.toggleEdit}> {this.props.title} </span>
+					  <p> {this.props.description || "Click message title to add a description"} </p>
+					  <p>{moment(this.props.updated_at).format("MM/DD/YYYY")}</p>
+					</div>
+					<div className='card-action'>
+					  <button className='btn' onClick = {this.deleteMessage}>Delete </button>
+					    <a href= { `/messages/${this.props._id}`} className='btn'> Show </a>
+					</div>
+				</div>
+			</div>
+			);
 
 	}
 	render() {

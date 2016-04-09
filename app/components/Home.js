@@ -5,7 +5,7 @@ class Home extends Component {
   	return ( 
   		<div>
         <h1>Community Coms</h1>
-        <a href='./boards' className='btn'>Board</a>
+        <a href='./messages className='btn'>Board</a>
     	</div>
     );
 	}

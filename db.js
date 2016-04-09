@@ -10,7 +10,7 @@ var Board = new Schema ({
 //List(MessageLists)
 var Message = new Schema({
 	name: {type: String, required: true },
-	boardId: {type: String, required: true }
+	category: String
 });
 
 //Comments(MessageComments)

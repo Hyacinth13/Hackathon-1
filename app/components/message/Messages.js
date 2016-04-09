@@ -7,15 +7,16 @@ class Messages extends Component {
 	constructor(props){
 		super(props);
 		this.addMessage = this.addMessage.bind(this);
-		this.getMessages = this. getMessages.bind(this);
+		this.getMessages = this.getMessages.bind(this);
 		this.state = {messages: [] };
 
 	}
 
 	getMessages() {
 		$.ajax ({
-			url: '/messages/community',
+			url: '/messages',
 			type: "GET",
+			data: {category: this.props.category},
 			DataType: "JSON"
 		}).done  (messages => {
 			this.setState({messages: messages})
@@ -26,8 +27,8 @@ class Messages extends Component {
 	 	this.getMessages();
 	}
 
-	addMessage() {
-	 	this.setState({messages: [...this.state.message, message] });
+	addMessage(message) {
+	 	this.setState({messages: [...this.state.messages, message] });
 	}
 
 	render(){
@@ -36,7 +37,8 @@ class Messages extends Component {
 		})
 	   return(
 	   	  <div>
-	   	    <MessageForm />
+	   	    <MessageForm category={this.props.category} addMessage={this.addMessage} />
+	   	    {messages}
 	   	  </div>)
 	   	;
 	 }

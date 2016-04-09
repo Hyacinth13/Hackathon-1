@@ -1,14 +1,14 @@
 import React from 'react';
 import Messages from '../components/message/Messages';
 
-class MessagePage extends React.Component{
+class CommunityPage extends React.Component{
 	render() {
 		return(
 			<div>
-        <Messages />
+             <Messages category="community" />
       </div>
     );
 	}
 }
 
-export default MessagePage;
+export default CommunityPage;

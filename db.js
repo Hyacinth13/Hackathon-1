@@ -1,15 +1,20 @@
 var mongoose = require( 'mongoose' );
 var Schema   = mongoose.Schema;
 
-//Board(MessagesBoards)
-var Board = new Schema ({
+var LandLord = new Schema ({
+	name: {type: String, required: true},
+	description: String,
+});
+
+var Community = new Schema ({
 	name: {type: String, required: true},
 	description: String,
 });
 
 //List(MessageLists)
 var Message = new Schema({
-	name: {type: String, required: true },
+	title: {type: String, required: true },
+	description: {type: String, required: true },
 	category: String
 });
 
@@ -20,7 +25,8 @@ var Comment = new Schema({
     messageId: { type: String, required: true },
 });
 
-mongoose.model( 'Board', Board );
+mongoose.model( 'LandLord', LandLord );
+mongoose.model( 'Community', Community );
 mongoose.model( 'Message', Message );
 mongoose.model( 'Comment', Comment )
 mongoose.connect( 'mongodb://localhost/community-comms' );

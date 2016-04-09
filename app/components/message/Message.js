@@ -76,7 +76,7 @@ class Message extends Component {
 	render() {
 		if(this.state.edit)
 			return this.edit();
-		esle
+		else
 		return this.message();
 	}
 	

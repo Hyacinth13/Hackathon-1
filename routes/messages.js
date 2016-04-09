@@ -1,16 +1,14 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
+var Community = mongoose.model('Community');
 var Message = mongoose.model('Message');
 var Comment = mongoose.model('Comment');
 
-router.get('/', function(req, res) {
-	res.render('messages');
-})
 //get the messagelist
-router.get('/community', function(req, res, next){
+router.get('/', function(req, res, next){
 	var query = Message.find({});
-	query.where('boardId', req.query.boardId);
+	query.where('category', req.query.category);
 	query.exec(function(err, messages, count){
 		res.json(messages);
 	});
@@ -19,10 +17,15 @@ router.get('/community', function(req, res, next){
 //post(create) and new messagelist
 router.post('/', function(req, res, next){
 	new Message({
-		name: req.body.name,
-		boardId: req.body.boardId
+		title: req.body.title,
+		description: req.body.description,
+		category: req.body.category
 	}).save(function(err, message, count){
-		res.json(message);
+		if (err) {
+			res.json(err)
+		} else {
+		  res.json(message);
+	    }
 	});
 });
 

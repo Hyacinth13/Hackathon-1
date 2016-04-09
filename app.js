@@ -7,7 +7,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-var boards = require('./routes/boards');
+var landlord = require('./routes/landlord');
+var community = require('./routes/community');
 var messages = require('./routes/messages');
 var comments = require('./routes/comments');
 
@@ -38,7 +39,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/boards', boards);
+app.use('/landlord', landlord);
+app.use('/community', community);
 app.use('/messages', messages);
 app.use('/comments', comments);
 

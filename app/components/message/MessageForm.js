@@ -11,16 +11,14 @@ class MessageForm extends React.Component{
    e.preventDefault();
    let title = this.refs.title;
    let description = this.refs.description;
-   let date = this.refs.date;
    $.ajax({
      url: '/messages',
      type: 'POST',
      dataType: 'JSON',
-     data: { title: title.value, description: description.value, date: date.value }
+     data: { title: title.value, description: description.value, category: this.props.category }
    }).done( message => {
      title.value = '';
      description.value = '';
-     date.value = date.now();
      this.props.addMessage(message);
    }).fail( msg => {
      console.log(msg);
@@ -32,7 +30,7 @@ class MessageForm extends React.Component{
      <div>
        <form onSubmit={this.addMessage}>
          <input ref='title' placeholder='title' />
-         <input ref='message' placeholder='message' />
+         <input ref='description' placeholder='message' />
          <button type='submit'>Add Message</button>
        </form>
      </div>

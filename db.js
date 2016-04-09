@@ -1,8 +1,17 @@
 var mongoose = require( 'mongoose' );
 var Schema   = mongoose.Schema;
 
-//var Model = new Schema({
-//});
+var Message = new Schema({
+	title: {type: String, required: true},
+	description: String,
+	date: Date
+});
 
-//mongoose.model( 'Model', Model );
-mongoose.connect( 'mongodb://localhost/react-starter' );
+var Comment = new Schema({
+	description: String,
+	date: Date
+});
+
+mongoose.model('Comment', Comment);
+mongoose.model( 'Message', Message );
+mongoose.connect( 'mongodb://localhost/community-comms' );

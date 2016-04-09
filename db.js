@@ -1,17 +1,26 @@
 var mongoose = require( 'mongoose' );
 var Schema   = mongoose.Schema;
 
-var Message = new Schema({
-	title: {type: String, required: true},
+//Board(MessagesBoards)
+var MessageBoard = new Schema ({
+	name: {type: String, required: true},
 	description: String,
-	date: Date
 });
 
-var Comment = new Schema({
-	description: String,
-	date: Date
+//List(MessageLists)
+var MessageList = new Schema({
+	name: {type: String, required: true },
+	boardId: {type: String, required: true }
 });
 
-mongoose.model('Comment', Comment);
-mongoose.model( 'Message', Message );
+//Comments(MessageComments)
+var MessageComment = new Schema({
+	name: { type: String, required: true },
+    description: { type: String, required: true },
+    listId: { type: String, required: true },
+});
+
+mongoose.model( 'MessageBoard', MessageBoard );
+mongoose.model( 'MessageList', MessageList );
+mongoose.model( 'MessageComment', MessageComment )
 mongoose.connect( 'mongodb://localhost/community-comms' );

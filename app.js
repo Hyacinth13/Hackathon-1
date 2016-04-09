@@ -1,4 +1,4 @@
-require('./db'); var express = require('express');
+require('./db'); 
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -7,7 +7,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-var message = require('./routes/message');
+var messageboards = require('./routes/messageboards');
+var messagelists = require('./routes/messagelists');
+var messagecomments = require('./routes/messagecomments');
 
 
 
@@ -36,8 +38,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-//app.use('/comments', comments);
-app.use('/message',message);
+app.use('/messageboards', messageboards);
+app.use('/messagelists', messagelists);
+app.use('/messagecomments', messagecomments);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

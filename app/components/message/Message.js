@@ -42,14 +42,14 @@ class Message extends Component {
 
 	edit(){
 		return(<div className="col s12 m3">
-			     <div className='card purple darken-1'>
+			     <div className='card grey darken-3'>
 				   <div className='card-content white-text'>
 					  <input required = {true} type = 'text' ref = 'title' placeholder = "Title" defaultValue = {this.props.title} />
 					  <textarea ref = 'description' defaultValue={this.props.description}></textarea>
 					</div>
 					<div className='card-action'>
-					  <button className='btn-large card grey darken-3 red-text red-darken-3' onClick = {this.toggleEdit}>Cancel </button>
-					  <button className= 'btn-large card grey darken-3 red-text red-darken-3' onClick = {this.updateMessage}> Save </button>
+					  <button className='btn-flat card grey darken-3 red-text red-darken-3' onClick = {this.toggleEdit}>Cancel </button>
+					  <button className= 'btn-flat card grey darken-3 red-text red-darken-3' onClick = {this.updateMessage}> Save </button>
 				   </div>
 				</div>
 			  </div>
@@ -57,7 +57,7 @@ class Message extends Component {
 	}
 	message(){
 		return(<div className="col s12 m3">
-			     <div className='card purple darken-1'>
+			     <div className='card grey darken-3'>
 				    <div className='card-content white-text'>
 					  <span className='card-title' onClick={this.toggleEdit}> {this.props.title} </span>
 					  <p> {this.props.description || "Click message title to add a description"} </p>

@@ -46,9 +46,9 @@ router.get('/', function(req, res, next){
 // 				MessageCard.find({listId: list_id}).remove().exec();
 // 				messagelist.remove();
 // 			});
-			res.status(200).send({success: true});
-		});
-	});
-});
+			// res.status(200).send({success: true});
+// 		});
+// 	});
+// });
 
 module.exports = router;

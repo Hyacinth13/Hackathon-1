@@ -45,7 +45,7 @@ class Message extends Component {
 			     <div className='card purple darken-1'>
 				   <div className='card-content white-text'>
 					  <input required = {true} type = 'text' ref = 'title' placeholder = "Title" defaultValue = {this.props.title} />
-					  <textarea ref = 'description'> this.props.description </textarea>
+					  <textarea ref = 'description' defaultValue={this.props.description}></textarea>
 					</div>
 					<div className='card-action'>
 					  <button className='btn' onClick = {this.toggleEdit}>Cancel </button>
@@ -65,7 +65,6 @@ class Message extends Component {
 					</div>
 					<div className='card-action'>
 					  <button className='btn' onClick = {this.deleteMessage}>Delete </button>
-					    <a href= { `/messages/${this.props._id}`} className='btn'> Show </a>
 					</div>
 				</div>
 			</div>

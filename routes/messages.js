@@ -33,7 +33,7 @@ router.post('/', function(req, res, next){
 router.put('/:id', function(req, res, next){
 	Message.findByIdAndUpdate(
 		req.params.id,
-		{$set: {name: req.body.name}},
+		{$set: {name: req.body.title, description: req.body.description}},
 		function(err, message){
 			res.json(message);
 		});

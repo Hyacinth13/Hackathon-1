@@ -1,11 +1,15 @@
 import React, {Component} from 'react';
 
+
 class Home extends Component {
- render() {
-   return (<div>
-             <h1>Community Comms</h1>
-           </div>);
- }
+	render() {
+  	return ( 
+  		<div>
+        <h1>Community Comms</h1>
+        <Messages />
+    	</div>
+    );
+	}
 }
 
-export default Home
+export default Home;

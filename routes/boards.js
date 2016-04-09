@@ -1,19 +1,19 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
-var MessageBoard = mongoose.model('MessageBoard');
-var MessageList = mongoose.model('MessageList');
-var MessageComment = mongoose.model('MessageComment');
+var Board = mongoose.model('Board');
+var Message = mongoose.model('Message');
+var Comment = mongoose.model('Comment');
 
 //Get the individual boards from the index using the id
 router.get('/:id', function(req, res, next){
-	res.render('messageboard');
+	res.render('board');
 });
 
 //Get the baords all together
 router.get('/', function(req, res, next){
-	MessageBoard.find( function(err, messageboards, count){
-		res.json(messageboards);
+	Board.find( function(err, boards, count){
+		res.json(boards);
 	})
 });
 

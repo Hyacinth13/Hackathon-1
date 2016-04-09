@@ -9,7 +9,7 @@ class MessageForm extends React.Component{
    let description = this.refs.description;
    let date = this.refs.date;
    $.ajax({
-     url: '/messagelists',
+     url: '/messages',
      type: 'POST',
      dataType: 'JSON',
      data: { title: title.value, description: description.value date: date.value }

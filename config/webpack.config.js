@@ -1,11 +1,15 @@
+var webpack = require('webpack');
+var path = require('path');
 module.exports = {
-  entry: [
-    './app/index.js'
-  ],
+  entry: {
+    app: './app/index',
+    // boards: './app/boards'
+  },
   output: {
-    path: __dirname + '/static/',
-    filename: 'bundle.js',
-    publicPath: '/static/'
+    path: path.join(__dirname + 'public'),
+    filename: '[name].js',
+    chuckFilename: '[id].chuck.js',
+    publicPath: '/public/'
   },
   module: {
     loaders: [

@@ -7,9 +7,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-var messageboards = require('./routes/messageboards');
-var messagelists = require('./routes/messagelists');
-var messagecomments = require('./routes/messagecomments');
+var boards = require('./routes/boards');
+var messages = require('./routes/messages');
+var comments = require('./routes/comments');
 
 
 
@@ -38,9 +38,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/messageboards', messageboards);
-app.use('/messagelists', messagelists);
-app.use('/messagecomments', messagecomments);
+app.use('/boards', boards);
+app.use('/messages', messages);
+app.use('/comments', comments);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

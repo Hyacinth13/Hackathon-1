@@ -12,25 +12,25 @@ class Messages extends Component {
 
 	}
 
-	 getMessages() {
-	 	$.ajax ({
-	 		url: '/messages',
-	 		type: "GET",
-	 		DataType: "JSON",
-	 	}).done(messages => {this.setState({messages: messages});
-	 }).fail(msg =>{console.log(msg)
-	 });
+	getMessages() {
+		$.ajax ({
+			url: '/messages',
+			type: "GET",
+			DataType: "JSON",
+		}).done(messages => {this.setState({messages: messages});
+		}).fail(msg =>{console.log(msg)
+	});
 
-	 componentDidMount(){
+	componentDidMount(){
 	 	this.getMessages();
-	 }
+	}
 
-	 addMessage() {
+	addMessage() {
 	 	this.setState({messages: [...this.state.message, message] });
-	 }
+	}
 
-	 }
-	 render(){
+	}
+	render(){
 	 	let messages = this.state.messages( message => {
 	 		return(<Message refresh={this.getMessages} key = {`message -${message._id}`} {...message}/>);
 	 	});

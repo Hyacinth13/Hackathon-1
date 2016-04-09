@@ -7,6 +7,7 @@ class MessageForm extends React.Component{
    e.preventDefault();
    let title = this.refs.title;
    let description = this.refs.description;
+   let date = this.refs.date;
    $.ajax({
      url: '/messagelists',
      type: 'POST',
@@ -15,6 +16,7 @@ class MessageForm extends React.Component{
    }).done( message => {
      title.value = '';
      description.value = '';
+     date.value = '';
      this.props.addMessage(message);
    }).fail( msg => {
      console.log(msg);

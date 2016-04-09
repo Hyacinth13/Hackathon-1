@@ -6,7 +6,8 @@ class CommentForm extends React.Component{
  addComment(e){
    e.preventDefault();
    let title = this.refs.title;
-   let description = this.refs.description;
+   let description = this.refs.description
+   let date = this.refs.date;
    $.ajax({
      url: '/messagecomments',
      type: 'POST',
@@ -15,6 +16,7 @@ class CommentForm extends React.Component{
    }).done( comment => {
      title.value = '';
      description.value = '';
+     date.value = '';
      this.props.addComment(comment);
    }).fail( msg => {
      console.log(msg);

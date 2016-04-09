@@ -60,6 +60,7 @@ class Message extends Component {
 							 <div className='card-content white-text'>
 								 <span className='card-title' onClick={this.toggleEdit}> {this.props.title} </span>
 								 <p> {this.props.description || "Click message title to add a description"} </p>
+								 <p>{moment(this.props.updated_at).format("MM/DD/YYYY")}</p>
 							 </div>
 							 <div className='card action'>
 								<button className='btn' onClick = {this.deleteMessage}>Delete </button>

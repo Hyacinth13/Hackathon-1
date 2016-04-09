@@ -26,11 +26,7 @@ router.get('/', function(req, res, next){
 // 	})
 // });
 
-
 //update a messageboard using the id
-
-// //update a messageboard using the id
-
 // router.put(':id', function(req, res){
 // 	MessageBoard.findByIdAndUpdate(
 // 		req.params.id,
@@ -42,8 +38,6 @@ router.get('/', function(req, res, next){
 
 
 //delete a messageboard using the id
-
-// //delete a messageboard using the id
 // router.delete(':/id', function(req, res){
 // 	MessageBoard.findById(req.params.id, function(err, messageboard){
 // 		messageboard.remove();

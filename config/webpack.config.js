@@ -3,7 +3,7 @@ var path = require('path');
 module.exports = {
   entry: {
     app: './app/index',
-    // boards: './app/boards'
+    board: './app/boards'
   },
   output: {
     path: path.join(__dirname + 'public'),

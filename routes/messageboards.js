@@ -13,7 +13,7 @@ router.get('/:id', function(req, res, next){
 //Get the baords all together
 router.get('/', function(req, res, next){
 	MessageBoard.find( function(err, messageboards, count){
-		res.json(messageboards);
+		res.json(messageboard);
 	})
 });
 

@@ -59,6 +59,7 @@ class Comments extends Component {
 					<div className='comments-content white-text'>
 						<span className='comments-title' onClick={this.toggleEdit}>{this.props.name}</span>
 						<p>{this.props.description || "Click Message name to add comments"}</p>
+						<p>{moment(this.props.updated_at).format("MM/DD/YYYY")}</p>
 						<div className='comments-action'>
 							<button className='btn' onClick={this.deleteComments}>Delete</button>
 						</div>

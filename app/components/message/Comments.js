@@ -14,7 +14,7 @@ class Comments extends Component {
 	}
 	updateComments(){
 		$.ajax({
-			url: `/Comments/${this.props._id}`,
+			url: `/messagecomments/${this.props._id}`,
 			type: 'PUT',
 			dataType:'JSON',
 			data: {name: this.refs.name.value, description: this.refs.description.value }
@@ -27,7 +27,7 @@ class Comments extends Component {
 	}
 	deleteComments(){
 		$.ajax({
-			url:`/Comments/${this.props._id}`,
+			url:`/messagecomments/${this.props._id}`,
 			type: 'DELETE',
 			dataType: 'JSON',
 		}).done( comments => {
